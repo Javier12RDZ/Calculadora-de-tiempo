@@ -278,13 +278,10 @@
             }
 
             // --- FUNCIONES AUXILIARES ---
-            function parseTimeToDate(timeString) {
-                if (!timeString) return null;
-                const now = new Date();
-                const [hours, minutes] = timeString.split(':');
-                now.setHours(hours, minutes, 0, 0);
-                return now;
-            }
+function parseTimeToDate(timeString) {
+    if (!timeString) return null;
+    const [hours, minutes] = timeString.split(':');
+    return new Date(new Date().setHours(Number(hours), Number(minutes), 0, 0));            }
 
             function formatMsToHMS(ms) {
                 if (ms < 0) ms = 0;
@@ -306,3 +303,4 @@
     </script>
 </body>
 </html>
+
